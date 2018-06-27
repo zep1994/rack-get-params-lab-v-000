@@ -23,8 +23,8 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-      new_item = req.params["item"]
-      resp.write check_and_add(new_item)
+      new = req.params["item"]
+      resp.write check_and_add(new)
     else
       resp.write "Path Not Found"
     end
@@ -40,10 +40,10 @@ class Application
     end
   end
 
-  def check_and_add(new_item)
-    if @@items.include?(new_item)
-      @@cart << new_item
-      return "added #{new_item}"
+  def check_and_add(new)
+    if @@items.include?(new)
+      @@cart << new
+      return "added #{new}"
     else
       return "We don't have that item"
     end
