@@ -22,12 +22,13 @@ class Application
           resp.write "#{item}\n"
       end
     end
-  elsif req.path.match(/add/)
-  new = resp.params["item"]
-  resp.write check(new)
-      else
-        resp.write "Path Not Found"
-      end
+ elsif req.path.match(/add/)
+      new_item = req.params["item"]
+      resp.write check_and_add(new_item)
+    else
+      resp.write "Path Not Found"
+    end
+
     resp.finish
   end
 
