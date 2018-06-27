@@ -18,14 +18,15 @@ class Application
       resp.write "Path Not Found"
     end
     
-     if req.path.match(/cart/)
+        if req.path.match(/cart/)
       @@cart.each do |item|
-      resp.write "#{item}\n"
+        resp.write "#{item}\n"
+      end
     elsif req.path.match(/add/)
  
       search_term = req.params["q"]
-      
-     if @@cart.include?(search_term)
+ 
+      if @@items.include?(search_term)
         resp.write "#{search_term} is one of our items"
       else
         resp.write "Couldn't find #{search_term}"
@@ -34,6 +35,7 @@ class Application
     else
       resp.write "Path Not Found"
     end
+ 
  
     resp.finish
   end
