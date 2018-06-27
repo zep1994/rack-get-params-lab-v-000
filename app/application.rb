@@ -23,7 +23,7 @@ class Application
       end
     end
   elsif req.path.match(/add/)
-  new = 
+  new = resp.params["item"]
     resp.finish
   end
 
