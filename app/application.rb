@@ -40,11 +40,11 @@ class Application
   end
   
   def check(new)
-    if @@items.include("new")
+    if @@items.include?(new)
       @@cart << new
       return "added #{new}"
     else
-      resp.write "We don't have that item"
+      return "We don't have that item"
     end
   end
 end
