@@ -7,7 +7,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-   if req.path.match(/items/)
+    if req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
       end
@@ -21,10 +21,10 @@ class Application
         @@cart.each do |item|
           resp.write "#{item}\n"
         end
-end
- elsif req.path.match(/add/)
-      new = req.params["item"]
-      resp.write check_and_add(new)
+      end
+    elsif req.path.match(/add/)
+      new_item = req.params["item"]
+      resp.write check_and_add(new_item)
     else
       resp.write "Path Not Found"
     end
@@ -39,11 +39,11 @@ end
       return "Couldn't find #{search_term}"
     end
   end
-  
-  def check(new)
-    if @@items.include?(new)
-      @@cart << new
-      return "added #{new}"
+
+  def check_and_add(new_item)
+    if @@items.include?(new_item)
+      @@cart << new_item
+      return "added #{new_item}"
     else
       return "We don't have that item"
     end
