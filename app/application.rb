@@ -18,6 +18,7 @@ class Application
       resp.write "Path Not Found"
     end
     
+     if req.path.match(/cart/)
     
 
     resp.finish
