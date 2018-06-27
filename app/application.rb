@@ -29,7 +29,8 @@ class Application
       if @@items.include?(search_term)
         resp.write "#{search_term} is one of our items"
       else
-        resp.write "Empty Cart"
+        resp.write "We don't have that item"
+
       end
  
     else
