@@ -25,7 +25,9 @@ class Application
   elsif req.path.match(/add/)
   new = resp.params["item"]
   resp.write check_and_add(new)
-  
+      else
+        resp.write "Path Not Found"
+      end
     resp.finish
   end
 
