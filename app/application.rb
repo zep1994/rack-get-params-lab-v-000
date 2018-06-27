@@ -43,6 +43,7 @@ class Application
     if @@items.include("item")
       @@cart << item
       return "added #{item}"
-      
+    else
+      resp.write "We do"
   end
 end
