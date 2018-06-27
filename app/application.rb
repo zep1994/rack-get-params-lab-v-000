@@ -39,10 +39,10 @@ class Application
     end
   end
   
-  def check(item)
-    if @@items.include("item")
-      @@cart << item
-      return "added #{item}"
+  def check(new)
+    if @@items.include("new")
+      @@cart << new
+      return "added #{new}"
     else
       resp.write "We don't have that item"
     end
