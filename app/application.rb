@@ -41,6 +41,7 @@ class Application
   
   def check(item)
     if @@items.include("item")
+      @@cart << item
       
   end
 end
