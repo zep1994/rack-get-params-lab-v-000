@@ -24,7 +24,7 @@ class Application
     end
   elsif req.path.match(/add/)
   new = resp.params["item"]
-  resp
+  resp.write check
     resp.finish
   end
 
