@@ -7,7 +7,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path.match(/items/)
+   if req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
       end
@@ -20,8 +20,8 @@ class Application
       else
         @@cart.each do |item|
           resp.write "#{item}\n"
-      end
-    end
+        end
+end
  elsif req.path.match(/add/)
       new = req.params["item"]
       resp.write check_and_add(new)
