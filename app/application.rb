@@ -22,8 +22,7 @@ class Application
           resp.write "#{item}\n"
       end
     end
-    
-    
+  elsif req.path.match
     resp.finish
   end
 
