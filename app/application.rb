@@ -20,8 +20,8 @@ class Application
       else
         @@cart.each do |item|
           resp.write "#{item}\n"
-     end
-end
+    
+    end
     resp.finish
   end
 
