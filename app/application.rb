@@ -40,6 +40,7 @@ class Application
   end
   
   def check(item)
-    if @@items.include("")
+    if @@items.include("item")
+      
   end
 end
