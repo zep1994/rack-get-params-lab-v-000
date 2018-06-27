@@ -28,6 +28,8 @@ class Application
       else
         resp.write "Path Not Found"
       end
+    else
+      
     resp.finish
   end
 
