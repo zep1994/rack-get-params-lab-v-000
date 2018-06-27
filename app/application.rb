@@ -42,6 +42,7 @@ class Application
   def check(item)
     if @@items.include("item")
       @@cart << item
-      return 
+      return "added #{item}"
+      
   end
 end
